@@ -6,6 +6,21 @@ A responsive marketing landing page for **TradeFlux**, a fictional crypto tradin
 
 The dashboard mockup, charts and partner logos are built with inline SVG and HTML, so the project ships no image files.
 
+## Screenshots
+
+![Desktop hero](docs/screenshots/desktop.png)
+
+<p>
+  <img src="docs/screenshots/mobile.png" alt="Mobile view" width="280">
+</p>
+
+<details>
+<summary>Full page</summary>
+
+![Full page](docs/screenshots/full-page.png)
+
+</details>
+
 ## Getting started
 
 Requires Node.js 18 or newer.
