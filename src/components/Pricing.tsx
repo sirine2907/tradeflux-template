@@ -44,7 +44,7 @@ export function Pricing() {
   const [yearly, setYearly] = useState(true);
 
   return (
-    <section id="pricing" className="section relative">
+    <section id="pricing" className="section relative isolate">
       <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/3 -z-10 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-violet/15 blur-[120px]" />
       <div className="container">
         <SectionHeading

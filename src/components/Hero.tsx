@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pb-16 pt-16 md:pb-24 md:pt-24">
+    <section id="top" className="relative isolate overflow-hidden pb-16 pt-16 md:pb-24 md:pt-24">
       {/* animated gradient blobs */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-10 h-[420px] w-[420px] -translate-x-[70%] md:h-[560px] md:w-[560px]">

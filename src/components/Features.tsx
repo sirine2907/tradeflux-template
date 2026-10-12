@@ -199,7 +199,7 @@ const FEATURES: Feature[] = [
 
 export function Features() {
   return (
-    <section id="features" className="section relative">
+    <section id="features" className="section relative isolate">
       <div className="container">
         <SectionHeading
           eyebrow="Features"
