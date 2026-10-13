@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { getBillingNote, getMonthlyPrice, YEARLY_DISCOUNT } from "@/lib/pricing";
 import { cn } from "@/lib/utils";
 
 const PLANS = [
@@ -75,13 +76,13 @@ export function Pricing() {
             />
           </button>
           <span className={cn(yearly ? "text-foreground" : "text-muted-foreground")}>
-            Yearly <span className="ml-1 rounded-full bg-cyan/15 px-2 py-0.5 text-xs font-semibold text-cyan">-20%</span>
+            Yearly <span className="ml-1 rounded-full bg-cyan/15 px-2 py-0.5 text-xs font-semibold text-cyan">-{YEARLY_DISCOUNT * 100}%</span>
           </span>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {PLANS.map((plan, i) => {
-            const price = yearly ? Math.round(plan.monthly * 0.8) : plan.monthly;
+            const price = getMonthlyPrice(plan.monthly, yearly);
             return (
               <motion.div
                 key={plan.name}
@@ -108,7 +109,7 @@ export function Pricing() {
                       <span className="text-muted-foreground"> / month</span>
                     </p>
                     <p className="text-xs text-muted-foreground">
-                      {plan.monthly === 0 ? "Free forever" : yearly ? `Billed $${price * 12} yearly` : "Billed monthly"}
+                      {getBillingNote(plan.monthly, yearly)}
                     </p>
                   </CardHeader>
                   <CardContent className="flex-1">
